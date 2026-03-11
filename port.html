@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumisang David Molete · MVP-Focused Developer</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+        h1 span {
+            color: #2563eb;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #475569;
+            margin: 0.5rem 0 1.5rem 0;
+            border-left: 5px solid #2563eb;
+            padding-left: 1.2rem;
+            background: #f1f5f9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 0 1rem 1rem 0;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 2px;
+            margin-top: 0.4rem;
+        }
+        .about {
+            background: #f8fafc;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            font-size: 1.1rem;
+            border: 1px solid #e2e8f0;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #2563eb;
+        }
+        .philosophy {
+            background: #eef2ff;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid #2563eb;
+        }
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            margin: 1.5rem 0;
+        }
+        .tech-item {
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid #cbd5e1;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tech-item i {
+            color: #2563eb;
+            width: 20px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.8rem;
+            padding: 1.8rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .project-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 15px 25px -10px rgba(37,99,235,0.15);
+            transform: translateY(-4px);
+        }
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .mvp-badge {
+            background: #2563eb10;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid #2563eb20;
+            margin-bottom: 1rem;
+        }
+        .project-phase {
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #0f172a;
+        }
+        .roadmap-list {
+            list-style: none;
+        }
+        .roadmap-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .roadmap-list i {
+            color: #2563eb;
+            width: 24px;
+            font-size: 1.2rem;
+        }
+        .internship-box {
+            background: #1e293b;
+            color: white;
+            padding: 2rem;
+            border-radius: 2rem;
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        .internship-box h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .internship-box .btn {
+            background: white;
+            color: #1e293b;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            display: inline-block;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .internship-box .btn:hover {
+            background: #e2e8f0;
+            transform: scale(1.02);
+        }
+        .github-placeholder {
+            background: #f1f5f9;
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #94a3b8;
+            margin: 2rem 0;
+        }
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .contact-links a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f1f5f9;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .contact-links a:hover {
+            background: #2563eb;
+            color: white;
+        }
+        .footer-note {
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Tumisang David <span>Molete</span></h1>
+            <div class="tagline">
+                <i class="fas fa-rocket" style="margin-right: 10px; color:#2563eb;"></i>
+                Building MVP solutions for healthcare & local economic empowerment.
+            </div>
+        </header>
+
+        <!-- ABOUT ME (career-focused) -->
+        <section>
+            <h2 class="section-title">👨‍💻 About Me</h2>
+            <div class="about">
+                <p><span class="highlight">IT Graduate (Advanced Diploma, 2024)</span> based in South Africa. I turn ideas into functional software using <strong>systems thinking</strong> and the <strong>SDLC</strong>. I believe in launching a <strong>Minimum Viable Product</strong> first, then iterating based on real feedback.</p>
+                <p style="margin-top: 1rem;">✅ 1-month WIL internship (Richfield College) – gained operational workflow & communication skills.<br>
+                ✅ Builder mindset, self-driven learner, interested in <strong>cybersecurity, cloud, AI agents & data analysis</strong>.</p>
+            </div>
+        </section>
+
+        <!-- MVP PHILOSOPHY -->
+        <div class="philosophy">
+            <h3 style="font-size: 1.8rem; font-weight:600; margin-bottom:0.5rem;">⚙️ MVP Philosophy</h3>
+            <p style="font-size:1.1rem;">I build with a <strong>Minimum Viable Product (MVP)</strong> approach: identify the core problem, build the smallest useful feature set, launch a prototype, and improve through iteration. Every project follows structured SDLC phases (Planning, Analysis, Design, Prototyping) to ensure purpose and clarity.</p>
+        </div>
+
+        <!-- TECH STACK -->
+        <section>
+            <h2 class="section-title">🛠️ Tech Stack</h2>
+            <div class="tech-grid">
+                <span class="tech-item"><i class="fab fa-php"></i> PHP</span>
+                <span class="tech-item"><i class="fas fa-database"></i> MySQL</span>
+                <span class="tech-item"><i class="fab fa-java"></i> Java</span>
+                <span class="tech-item"><i class="fas fa-code"></i> C++</span>
+                <span class="tech-item"><i class="fab fa-html5"></i> HTML</span>
+                <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS</span>
+                <span class="tech-item"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tech-item"><i class="fas fa-server"></i> XAMPP</span>
+                <span class="tech-item"><i class="fas fa-code"></i> VS Code</span>
+                <span class="tech-item"><i class="fas fa-flask"></i> NetBeans</span>
+                <span class="tech-item"><i class="fas fa-window-maximize"></i> Visual Studio</span>
+                <span class="tech-item"><i class="fas fa-table"></i> MS Access</span>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS (MVP explained) -->
+        <section>
+            <h2 class="section-title">📌 Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- MedTrack -->
+                <div class="project-card">
+                    <div class="mvp-badge"><i class="fas fa-check-circle"></i> MVP Prototype</div>
+                    <div class="project-title">MedTrack</div>
+                    <div style="color:#475569; margin-bottom:1rem;">Healthcare System Prototype</div>
+                    <p><strong>MVP scope:</strong> patient authentication, dashboard, medical history, billing with VAT.</p>
+                    <p><strong>Process:</strong> Planned core features (SDLC), built with PHP/MySQL, focused on modular architecture & usability.</p>
+                    <div class="project-phase"><i class="fas fa-cogs" style="margin-right:6px;"></i>Status: Functional prototype – ready for iteration.</div>
+                </div>
+                <!-- KasiGrowth -->
+                <div class="project-card">
+                    <div class="mvp-badge"><i class="fas fa-lightbulb"></i> MVP Concept</div>
+                    <div class="project-title">KasiGrowth</div>
+                    <div style="color:#475569; margin-bottom:1rem;">Township Business Empowerment</div>
+                    <p><strong>MVP concept:</strong> membership-based digital ecosystem for local businesses (website + advertising).</p>
+                    <p><strong>Product strategy:</strong> Analyzed user needs, defined scalable MVP, designed growth model.</p>
+                    <div class="project-phase"><i class="fas fa-chart-line" style="margin-right:6px;"></i>Phase: Planning & product-market fit validation.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENT LEARNING ROADMAP -->
+        <section>
+            <h2 class="section-title">📚 Learning Roadmap</h2>
+            <ul class="roadmap-list">
+                <li><i class="fas fa-shield-alt"></i> <strong>Systems Security</strong> – securing web apps, OWASP basics</li>
+                <li><i class="fas fa-cloud"></i> <strong>Cloud Fundamentals</strong> – AWS/GCP for scalable deployment</li>
+                <li><i class="fas fa-chart-bar"></i> <strong>Data Analysis</strong> – using data to drive product decisions</li>
+                <li><i class="fas fa-robot"></i> <strong>AI Agents</strong> – exploring integration into future MVPs</li>
+            </ul>
+        </section>
+
+        <!-- COLLABORATION / INTERNSHIP INTEREST -->
+        <div class="internship-box">
+            <h3>🔍 Open for internships & junior roles</h3>
+            <p style="font-size:1.2rem; opacity:0.9; max-width:700px; margin:0 auto;">Actively seeking <strong>Internships, Learnerships, Junior Developer (Web/Systems)</strong> opportunities. I bring a builder mindset, structured thinking, and eagerness to contribute to real MVPs.</p>
+            <a href="#contact" class="btn">📩 Let's connect</a>
+        </div>
+
+        <!-- GITHUB STATS (real username) -->
+        <div class="github-placeholder">
+            <i class="fab fa-github" style="font-size:3rem; color:#1e293b;"></i>
+            <h3 style="margin:0.5rem 0;">GitHub activity</h3>
+            <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
+                <div><img src="https://github-readme-stats.vercel.app/api?username=TDMolete&show_icons=true&theme=graywhite&hide_border=true" alt="GitHub stats" style="max-width:100%; border-radius:12px;"></div>
+                <div><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TDMolete&layout=compact&theme=graywhite&hide_border=true" alt="Top langs" style="max-width:100%; border-radius:12px;"></div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION (updated) -->
+        <section id="contact">
+            <h2 class="section-title">📫 Let's connect</h2>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/tumisang-molete-273619312" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:tumisangmolete322@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://github.com/TDMolete" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <p style="color:#475569;"><i class="fas fa-map-pin"></i> South Africa · ready for remote/on-site opportunities.</p>
+        </section>
+
+        <hr>
+        <div class="footer-note">
+            <p>Built with MVP mindset — clean, functional, and ready to iterate. © 2025 Tumisang David Molete</p>
+        </div>
+    </div>
+</body>
+</html>
